@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -21,11 +22,17 @@ public class EnemyPatrol : MonoBehaviour
     //States
     public bool playerIsInSightRange;
 
+
+    private void Start()
+    {
+        //StateChoose();
+    }
+
     private void Update()
     {
         
         if (patrol) Patrolling();
-        if (!patrol && !captured) Chasing();
+        if (!patrol && captured) Chasing();
     }
 
     void Patrolling()
@@ -39,6 +46,8 @@ public class EnemyPatrol : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f)
         {
             walkPointSet = false;
+            //StateChoose();
+            //patrol = false;
         }
     }
 
@@ -57,6 +66,27 @@ public class EnemyPatrol : MonoBehaviour
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
+        }
+    }
+
+    void Staking()
+    {
+        Invoke("StateChoose", Random.Range(1,3));
+    }
+
+    void StateChoose()
+    {
+        int choose = Random.Range(0, 1);
+        Debug.Log(choose);
+        switch (choose)
+        {
+            case 0:
+                patrol = true;
+                break;
+                
+            case 1:
+                Staking();
+                break;
         }
     }
 }
