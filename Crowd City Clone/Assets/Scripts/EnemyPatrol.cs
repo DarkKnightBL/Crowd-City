@@ -8,14 +8,14 @@ public class EnemyPatrol : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
 
-    [SerializeField] private Transform player;
+    [SerializeField] public Transform player;
 
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
     
     //Patrolling
     [SerializeField] private Vector3 walkPoint;
     
-    [SerializeField] private bool walkPointSet, patrol, captured;
+    [SerializeField] public bool walkPointSet, patrol, captured;
     
     [SerializeField] private float walkPointRange;
     
@@ -51,7 +51,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    void Chasing()
+    public void Chasing()
     {
         agent.SetDestination(player.position);
     }

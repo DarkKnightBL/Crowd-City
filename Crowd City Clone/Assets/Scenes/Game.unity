@@ -74987,7 +74987,7 @@ GameObject:
   - component: {fileID: 1738904374}
   m_Layer: 0
   m_Name: GameCtrlr
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83874,6 +83874,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 920270604}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1952003850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18,
+    type: 3}
+  m_PrefabInstance: {fileID: 920270604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1952131055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93750,9 +93762,10 @@ GameObject:
   - component: {fileID: 8592876451149913618}
   - component: {fileID: 8592876451149913617}
   - component: {fileID: 8592876451149913616}
+  - component: {fileID: 8592876451149913620}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94286,10 +94299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e846eb1eae6a8274390a93856a2b2286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatingJoystick: {fileID: 0}
-  animatorController: {fileID: 0}
-  moveSpeed: 0
-  rotateSpeed: 0
+  floatingJoystick: {fileID: 1952003850}
+  animatorController: {fileID: 8592876451149913617}
+  moveSpeed: 5
+  rotateSpeed: 200
 --- !u!114 &8592876451149913617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94332,6 +94345,18 @@ CapsuleCollider:
   m_Height: 1.94
   m_Direction: 1
   m_Center: {x: 0, y: 0.97, z: 0}
+--- !u!114 &8592876451149913620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592876451140562337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a794f8823abf0164c9f1e5f875d4cab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &8592876451154223311
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -94352,7 +94377,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0bcdca085445acc4aa21304ffa02deba, type: 2}
+  - {fileID: 2100000, guid: 3b00dce6188cf044587982e078332f62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
